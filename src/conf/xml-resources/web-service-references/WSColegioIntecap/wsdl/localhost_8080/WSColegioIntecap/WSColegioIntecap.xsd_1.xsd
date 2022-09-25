@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://services.soap.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.soap.com/">
+
+<xs:element name="actualizarAlumno" type="tns:actualizarAlumno"/>
+
+<xs:element name="actualizarAlumno2" type="tns:actualizarAlumno2"/>
+
+<xs:element name="actualizarAlumno2Response" type="tns:actualizarAlumno2Response"/>
+
+<xs:element name="actualizarAlumnoResponse" type="tns:actualizarAlumnoResponse"/>
+
+<xs:element name="actualizarGrado" type="tns:actualizarGrado"/>
+
+<xs:element name="actualizarGradoResponse" type="tns:actualizarGradoResponse"/>
+
+<xs:element name="actualizarNota" type="tns:actualizarNota"/>
+
+<xs:element name="actualizarNotaResponse" type="tns:actualizarNotaResponse"/>
+
+<xs:element name="buscarAlumno" type="tns:buscarAlumno"/>
+
+<xs:element name="buscarAlumnoResponse" type="tns:buscarAlumnoResponse"/>
+
+<xs:element name="buscarGrado" type="tns:buscarGrado"/>
+
+<xs:element name="buscarGradoResponse" type="tns:buscarGradoResponse"/>
+
+<xs:element name="buscarNota" type="tns:buscarNota"/>
+
+<xs:element name="buscarNotaResponse" type="tns:buscarNotaResponse"/>
+
+<xs:element name="creaNota" type="tns:creaNota"/>
+
+<xs:element name="creaNotaResponse" type="tns:creaNotaResponse"/>
+
+<xs:element name="crearAlumno" type="tns:crearAlumno"/>
+
+<xs:element name="crearAlumnoResponse" type="tns:crearAlumnoResponse"/>
+
+<xs:element name="crearGrado" type="tns:crearGrado"/>
+
+<xs:element name="crearGradoResponse" type="tns:crearGradoResponse"/>
+
+<xs:element name="eliminarAlumno" type="tns:eliminarAlumno"/>
+
+<xs:element name="eliminarAlumnoResponse" type="tns:eliminarAlumnoResponse"/>
+
+<xs:element name="eliminarGrado" type="tns:eliminarGrado"/>
+
+<xs:element name="eliminarGradoResponse" type="tns:eliminarGradoResponse"/>
+
+<xs:element name="eliminarNota" type="tns:eliminarNota"/>
+
+<xs:element name="eliminarNotaResponse" type="tns:eliminarNotaResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="todosalumnos" type="tns:todosalumnos"/>
+
+<xs:element name="todosalumnosResponse" type="tns:todosalumnosResponse"/>
+
+<xs:element name="todosgrados" type="tns:todosgrados"/>
+
+<xs:element name="todosgradosResponse" type="tns:todosgradosResponse"/>
+
+<xs:element name="todosnotas" type="tns:todosnotas"/>
+
+<xs:element name="todosnotasResponse" type="tns:todosnotasResponse"/>
+
+<xs:complexType name="todosgrados">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="todosgradosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modeloGrado" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modeloGrado">
+<xs:sequence>
+<xs:element name="descripcion_grado" type="xs:string" minOccurs="0"/>
+<xs:element name="id_grado" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="todosnotas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="todosnotasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modeloNota" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modeloNota">
+<xs:sequence>
+<xs:element name="id_alumno" type="xs:int"/>
+<xs:element name="id_grado" type="xs:int"/>
+<xs:element name="id_notas" type="xs:int"/>
+<xs:element name="nombre_alumno" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre_grado" type="xs:string" minOccurs="0"/>
+<xs:element name="nota1" type="xs:double"/>
+<xs:element name="nota2" type="xs:double"/>
+<xs:element name="nota3" type="xs:double"/>
+<xs:element name="nota4" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarNota">
+<xs:sequence>
+<xs:element name="id_alumno" type="xs:int"/>
+<xs:element name="id_grado" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarNotaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modeloNota" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarNota">
+<xs:sequence>
+<xs:element name="id_alumno" type="xs:int"/>
+<xs:element name="id_grado" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarNotaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarAlumno">
+<xs:sequence>
+<xs:element name="alumno" type="tns:modeloAlumno" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modeloAlumno">
+<xs:sequence>
+<xs:element name="apellido_alumno" type="xs:string" minOccurs="0"/>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="id_alumno" type="xs:int"/>
+<xs:element name="nombre_alumno" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarAlumnoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearGrado">
+<xs:sequence>
+<xs:element name="grado" type="tns:modeloGrado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearGradoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarGrado">
+<xs:sequence>
+<xs:element name="grado" type="tns:modeloGrado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarGradoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarNota">
+<xs:sequence>
+<xs:element name="nota" type="tns:modeloNota" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarNotaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarGrado">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarGradoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="todosalumnos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="todosalumnosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modeloAlumno" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="creaNota">
+<xs:sequence>
+<xs:element name="nota" type="tns:modeloNota" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="creaNotaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarAlumno">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarAlumnoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarAlumno2">
+<xs:sequence>
+<xs:element name="alumno" type="tns:modeloAlumno" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarAlumno2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarGrado">
+<xs:sequence>
+<xs:element name="idgrado" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarGradoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modeloGrado" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlumno">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAlumnoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modeloAlumno" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearAlumno">
+<xs:sequence>
+<xs:element name="alumno" type="tns:modeloAlumno" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearAlumnoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
