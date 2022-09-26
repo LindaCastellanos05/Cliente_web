@@ -5,8 +5,10 @@
         <group>
             <file>file:/C:/Users/Linda/Documents/NetBeansProjects/clienteWSColegioIntecap/src/java/Servlets/controlador.java</file>
             <file>file:/C:/Users/Linda/Documents/NetBeansProjects/clienteWSColegioIntecap/src/java/Modelos/GradoModelo.java</file>
-            <file>file:/C:/Users/Linda/Documents/NetBeansProjects/clienteWSColegioIntecap/src/java/Modelos/AlumnoModelo.java</file>
+            <file>file:/C:/Users/Linda/Documents/NetBeansProjects/clienteWSColegioIntecap/src/java/Modelos/NotaModelo.java</file>
+            <file>file:/C:/Users/Linda/Documents/NetBeansProjects/clienteWSColegioIntecap/web/nota.jsp</file>
             <file>file:/C:/Users/Linda/Documents/NetBeansProjects/clienteWSColegioIntecap/web/index.jsp</file>
+            <file>file:/C:/Users/Linda/Documents/NetBeansProjects/clienteWSColegioIntecap/web/editarNota.jsp</file>
             <file>file:/C:/Users/Linda/Documents/NetBeansProjects/clienteWSColegioIntecap/web/grado.jsp</file>
         </group>
     </open-files>

@@ -7,6 +7,7 @@ package Servlets;
 
 import Modelos.AlumnoModelo;
 import Modelos.GradoModelo;
+import Modelos.NotaModelo;
 import java.awt.Image;
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -34,6 +35,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import ws.ModeloAlumno;
 import ws.ModeloGrado;
+import ws.ModeloNota;
 
 /**
  *
@@ -47,10 +49,14 @@ public class controlador extends HttpServlet {
  String grado="grado.jsp";
  String creargrado ="crearGrado.jsp";
  String editargrado ="editarGrado.jsp";
- String nota="notas.jsp";
+ String nota="nota.jsp";
+ String crearnota = "crearNota.jsp";
+ String editarnota = "editarNota.jsp";
+ 
  String acceso ="";
  AlumnoModelo am = new AlumnoModelo();
  GradoModelo gm = new GradoModelo();
+ NotaModelo nm = new NotaModelo();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -290,7 +296,7 @@ public class controlador extends HttpServlet {
             }
             
        
-        }else if (accion.equals("nota")){
+        }else if (accion.equals("notas")){
             acceso = nota;
             
             
@@ -328,17 +334,60 @@ public class controlador extends HttpServlet {
             
             acceso=grado;
             
-              /*sin foto
-            String nombre = request.getParameter("txtnombre");
-            String apellido = request.getParameter("txtapellido");
-            String id = request.getParameter("txtid");
-            
-            ModeloAlumno modal = new ModeloAlumno();
-            modal.setNombreAlumno(nombre);
-            modal.setApellidoAlumno(apellido);
-            modal.setIdAlumno(Integer.parseInt(id));
-            
-            am.actualizar(modal);*/
+            //acciones notas
+        }else if(accion.equals("agregarn")){
+            acceso=crearnota;
+        }else if(accion.equals("guardarn")){
+           String idal = request.getParameter("txtidal");
+           String idgr =request.getParameter("txtidgr");
+            String nota1 =request.getParameter("txtnota1");
+            String nota2 =request.getParameter("txtnota2");
+            String nota3 =request.getParameter("txtnota3");
+            String nota4 =request.getParameter("txtnota4");
+           
+           
+           ModeloNota modnota = new ModeloNota();
+           modnota.setIdAlumno(Integer.parseInt(idal));
+           modnota.setIdGrado(Integer.parseInt(idgr));
+           modnota.setNota1(Double.parseDouble(nota1));
+           modnota.setNota2(Double.parseDouble(nota2));
+           modnota.setNota3(Double.parseDouble(nota3));
+           modnota.setNota4(Double.parseDouble(nota4));
+           
+          nm.crear(modnota);
+          acceso = nota;
+        }else if (accion.equals("eliminarn")){
+            String ida = request.getParameter("idal");
+            String idg = request.getParameter("idgr");
+           
+           nm.eliminar(Integer.parseInt(ida), Integer.parseInt(idg));
+           acceso=nota;
+        }else if(accion.equals("editarn")){
+            request.setAttribute("idal", request.getParameter("idal"));
+            request.setAttribute("idgr", request.getParameter("idgr"));
+            acceso=editarnota;
+        }else if(accion.equals("actualizarn")){
+            String idal = request.getParameter("txtidalu");
+            String idgr = request.getParameter("txtidgra");
+            String nota1 = request.getParameter("txtnota1");
+             String nota2 = request.getParameter("txtnota2");
+              String nota3 = request.getParameter("txtnota3");
+               String nota4 = request.getParameter("txtnota4");
+               
+                System.out.println("esto es el idal "+idal);
+                 System.out.println("esto es el idgr "+idgr);
+                  System.out.println("esto es nota1 "+nota1);
+               
+               ModeloNota modnota = new ModeloNota();
+               modnota.setIdAlumno(Integer.parseInt(idal));
+               modnota.setIdGrado(Integer.parseInt(idgr));
+               modnota.setNota1(Double.parseDouble(nota1));
+               modnota.setNota2(Double.parseDouble(nota2));
+               modnota.setNota3(Double.parseDouble(nota3));
+               modnota.setNota4(Double.parseDouble(nota4));
+               
+               nm.actualizar(modnota);
+               acceso=nota;
         }
             
        

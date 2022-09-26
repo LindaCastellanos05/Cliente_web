@@ -31,7 +31,7 @@
             <div class="card-header">
                <a href="controlador?Accion=agregar"class="btn btn-primary">Agregar Usuario</a>
                <a href="controlador?Accion=grado"class="btn btn-info">Grados</a>
-               <a href="controlador?Accion=nota"class="btn btn-success">Notas</a>
+               <a href="controlador?Accion=notas"class="btn btn-success">Notas</a>
              
                <div class="container mt-2"></div>
                

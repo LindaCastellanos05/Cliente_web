@@ -28,7 +28,7 @@
                <a href="controlador?Accion=agregarg"class="btn btn-primary">Agregar Grado</a>
             
                <div class="card-body">
-                    <table id="mitablaintecap2" class="table table-striped table-hover" style="">
+                    <table id="mitablaintecap2" class="table table-striped table-hover" style="width:100%">
                    
                          <div class="mt-2 mb-2">
                            <input type="text" name="txtnombre" class="form-control" id="txtid" placeholder="ID">
