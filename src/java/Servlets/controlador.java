@@ -52,7 +52,7 @@ public class controlador extends HttpServlet {
  String nota="nota.jsp";
  String crearnota = "crearNota.jsp";
  String editarnota = "editarNota.jsp";
- 
+ String login = "login.jsp";
  String acceso ="";
  AlumnoModelo am = new AlumnoModelo();
  GradoModelo gm = new GradoModelo();
@@ -388,6 +388,23 @@ public class controlador extends HttpServlet {
                
                nm.actualizar(modnota);
                acceso=nota;
+        }else if(accion.equals("login")){
+            
+            System.out.println("se presiona login");
+            String nombre = request.getParameter("txtnombre");
+            String contraseña = request.getParameter("txtpass");
+            System.out.println("esto es contraseña"+contraseña);
+            System.out.println("esto es usuario"+nombre);
+            String respuesta = am.login(nombre, contraseña);
+            
+            
+            if(respuesta.equals("si")){
+                  acceso = index;
+              System.out.println("SI es correcto");
+             }else{
+              acceso = login;
+              System.out.println("NO es correcto");
+             }
         }
             
        

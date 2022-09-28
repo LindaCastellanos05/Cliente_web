@@ -10,6 +10,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import ws.ModeloGrado;
@@ -93,6 +94,7 @@ DefaultTableModel mimodelGrado;
         btneliminargrado = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtidgrado = new javax.swing.JTextField();
+        btnbuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblgrado = new javax.swing.JTable();
 
@@ -131,8 +133,12 @@ DefaultTableModel mimodelGrado;
 
         jLabel3.setText("ID Grado:");
 
-        txtidgrado.setEditable(false);
-        txtidgrado.setFocusable(false);
+        btnbuscar.setText("buscar");
+        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,7 +158,10 @@ DefaultTableModel mimodelGrado;
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(txtidgrado, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtidgrado, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnbuscar))
                             .addComponent(txtgrado, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -167,8 +176,10 @@ DefaultTableModel mimodelGrado;
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtidgrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtidgrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnbuscar))
+                .addGap(1, 1, 1)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtgrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -274,6 +285,30 @@ DefaultTableModel mimodelGrado;
        }
     }//GEN-LAST:event_btneliminargradoActionPerformed
 
+    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
+        if(txtidgrado.getText().toString().equals("")){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un ID para la busqueda de grado");
+        }else{
+        int id = Integer.parseInt(txtidgrado.getText().toString());
+
+         if(cliente.buscarGrado(id).isEmpty()){
+           JOptionPane.showMessageDialog(this, "error, no existe grado");
+          
+         }else{
+            List<ModeloGrado> listaid = cliente.buscarGrado(id);
+            
+            for(int i=0;i<listaid.size();i++){
+                String nombregrado = listaid.get(i).getDescripcionGrado();
+                System.out.println("esto es nombre grado for"+nombregrado);
+                 txtgrado.setText(nombregrado);
+                 
+                 
+            }
+       
+         }
+        }
+    }//GEN-LAST:event_btnbuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -310,6 +345,7 @@ DefaultTableModel mimodelGrado;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btncreargrado;
     private javax.swing.JButton btneditargrado;
     private javax.swing.JButton btneliminargrado;

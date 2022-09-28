@@ -52,6 +52,8 @@ public class ObjectFactory {
     private final static QName _EliminarNotaResponse_QNAME = new QName("http://services.soap.com/", "eliminarNotaResponse");
     private final static QName _Hello_QNAME = new QName("http://services.soap.com/", "hello");
     private final static QName _HelloResponse_QNAME = new QName("http://services.soap.com/", "helloResponse");
+    private final static QName _Login_QNAME = new QName("http://services.soap.com/", "login");
+    private final static QName _LoginResponse_QNAME = new QName("http://services.soap.com/", "loginResponse");
     private final static QName _Todosalumnos_QNAME = new QName("http://services.soap.com/", "todosalumnos");
     private final static QName _TodosalumnosResponse_QNAME = new QName("http://services.soap.com/", "todosalumnosResponse");
     private final static QName _Todosgrados_QNAME = new QName("http://services.soap.com/", "todosgrados");
@@ -288,6 +290,22 @@ public class ObjectFactory {
      */
     public HelloResponse createHelloResponse() {
         return new HelloResponse();
+    }
+
+    /**
+     * Create an instance of {@link Login }
+     * 
+     */
+    public Login createLogin() {
+        return new Login();
+    }
+
+    /**
+     * Create an instance of {@link LoginResponse }
+     * 
+     */
+    public LoginResponse createLoginResponse() {
+        return new LoginResponse();
     }
 
     /**
@@ -612,6 +630,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://services.soap.com/", name = "helloResponse")
     public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {
         return new JAXBElement<HelloResponse>(_HelloResponse_QNAME, HelloResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Login }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.soap.com/", name = "login")
+    public JAXBElement<Login> createLogin(Login value) {
+        return new JAXBElement<Login>(_Login_QNAME, Login.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link LoginResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.soap.com/", name = "loginResponse")
+    public JAXBElement<LoginResponse> createLoginResponse(LoginResponse value) {
+        return new JAXBElement<LoginResponse>(_LoginResponse_QNAME, LoginResponse.class, null, value);
     }
 
     /**

@@ -19,6 +19,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -149,6 +150,7 @@ public class vistaAlumno extends javax.swing.JFrame implements MouseListener {
         btnfoto = new javax.swing.JButton();
         lblfoto = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnbuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -175,8 +177,6 @@ public class vistaAlumno extends javax.swing.JFrame implements MouseListener {
         jLabel1.setText("ALUMNOS");
 
         jLabel2.setText("ID Alumno:");
-
-        txtidal.setEditable(false);
 
         jLabel3.setText("Nombre Alumno:");
 
@@ -212,6 +212,13 @@ public class vistaAlumno extends javax.swing.JFrame implements MouseListener {
 
         jLabel5.setText("Elejir foto alumno:");
 
+        btnbuscar.setText("buscar");
+        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -226,7 +233,10 @@ public class vistaAlumno extends javax.swing.JFrame implements MouseListener {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtidal, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txtidal, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnbuscar))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -256,9 +266,11 @@ public class vistaAlumno extends javax.swing.JFrame implements MouseListener {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addGap(26, 26, 26)
-                .addComponent(txtidal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtidal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnbuscar))
+                .addGap(3, 3, 3)
                 .addComponent(btncrearal)
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
@@ -406,6 +418,35 @@ public class vistaAlumno extends javax.swing.JFrame implements MouseListener {
        }
     }//GEN-LAST:event_btnfotoActionPerformed
 
+    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
+        if(txtidal.getText().toString().equals("")){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un ID para la busqueda de alumno");
+        }else{
+        int id = Integer.parseInt(txtidal.getText().toString());
+        ModeloAlumno moda = new ModeloAlumno();
+         if(cliente.buscarAlumno(id).isEmpty()){
+           JOptionPane.showMessageDialog(this, "error, no existe alumno");
+          
+         }else{
+            List<ModeloAlumno> listaid = cliente.buscarAlumno(id);
+            
+            System.out.println("id"+listaid.get(0).getIdAlumno());
+            for(int i=0;i<listaid.size();i++){
+                int idalumno=(listaid.get(i).getIdAlumno());
+                  System.out.println("esto es id for"+idalumno);
+                String nombrealumno = listaid.get(i).getNombreAlumno();
+                System.out.println("esto es nombre for"+nombrealumno);
+                 txtnombreal.setText(nombrealumno);
+                 String apealumno = listaid.get(i).getApellidoAlumno();
+                 System.out.println("esto es ape for"+apealumno);
+                 txtapellidoal.setText(apealumno);
+                 
+            }
+       
+         }
+        }
+    }//GEN-LAST:event_btnbuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -442,6 +483,7 @@ public class vistaAlumno extends javax.swing.JFrame implements MouseListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btncrearal;
     private javax.swing.JButton btneditaral;
     private javax.swing.JButton btneliminaral;

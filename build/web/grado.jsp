@@ -24,19 +24,22 @@
         <div class="container mt-4"></div>
         <h1 class="text-center bg-info mb-4">Sistema de alumnos intecap</h1>
         
-        <div class="card-header">
+        
+            <div class="bg-warning card-header">
                <a href="controlador?Accion=agregarg"class="btn btn-primary">Agregar Grado</a>
+               <a href="controlador?Accion=index" class="btn btn-info">Inicio Alumnos</a>
             
-               <div class="card-body">
+              <center><div class="container mt-2">
+                         <div class=" mt-2 mb-2">
+                           <input type="text" name="txtnombre" class="form-control" id="txtid" placeholder="ID"readonly="true">
+                        <input type="text" name="txtnombre" class="form-control" id="txtnombre" placeholder="grado"readonly="true">
+                          </div>
+                    </div></center>
+            </div>
+            
+                        <div class="card-body">
                     <table id="mitablaintecap2" class="table table-striped table-hover" style="width:100%">
-                   
-                         <div class="mt-2 mb-2">
-                           <input type="text" name="txtnombre" class="form-control" id="txtid" placeholder="ID">
-                        <input type="text" name="txtnombre" class="form-control" id="txtnombre" placeholder="grado">
-                         
-                    </div>
-                        
-                        
+                    
                         
                        <thead>
                     <th>ID</th>
@@ -53,7 +56,7 @@ for(ModeloGrado g:datos){
     
 
                             %>
-                        <tr>
+                        <tr id="gradosdatos">
                     <td><%=g.getIdGrado() %> </td>
                     <td><%=g.getDescripcionGrado() %> </td><!-- comment -->
                     
@@ -70,15 +73,16 @@ for(ModeloGrado g:datos){
             
             
         </div>
-        </div> 
+         
         
     </body>
-    
     <script type="text/javascript" charset="utf8" src=" https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" charset="utf8" src=" https://code.jquery.com/jquery-3.5.1.js"></script>
+     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+   
+
     
     <script>
         
@@ -117,7 +121,19 @@ for(ModeloGrado g:datos){
   
 });
                   setTimeout("redireccion()",2000);
-                            }              
+                            }
+                            var urltexto3=String(loc).indexOf("actualizar");
+            if(urltexto3>=0){
+               // alert("se elimino");
+               
+              Swal.fire({
+  icon: 'info',
+  title: 'Se actualizo Alumno',
+  text: 'SE PROCEDIO A ACTUALIZAR DATOS !',
+  
+});
+                  setTimeout("redireccion()",2000);
+                            }    
             
             
           
@@ -130,6 +146,39 @@ for(ModeloGrado g:datos){
         $(document).ready(function () {
     $('#mitablaintecap2').DataTable();
 });
+    </script>
+        <script>
+     
+   //getElementById obtengo 
+    var table =document.getElementById("mitablaintecap2");
+        //por etiqueta getElementsByTagName
+        var tbody=document.getElementsByTagName("tbody");
+      $("body").on("click","#gradosdatos",function(event){
+          e=event||windows.event;
+          var data=[];
+          var data2=[];
+          var target=e.srcElement || e.target;
+          var target2=e.srcElement || e.target;
+           
+          while(target&&target.nodeName !=="TR"){
+              target=target.parentNode;
+              
+          }
+           if(target){
+              var cells=target.getElementsByTagName("td");
+               
+              for(var i=0;i<cells.length;i++){
+                  data.push(cells[i].innerHTML);
+                 
+              
+                                    
+              }
+              
+          }
+               document.getElementById('txtid').value=data[0];
+          document.getElementById('txtnombre').value=data[1];
+      });  
+        
     </script>
     
 </html>

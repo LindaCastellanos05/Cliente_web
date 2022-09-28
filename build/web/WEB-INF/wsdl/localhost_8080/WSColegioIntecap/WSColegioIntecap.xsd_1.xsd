@@ -56,6 +56,10 @@
 
 <xs:element name="helloResponse" type="tns:helloResponse"/>
 
+<xs:element name="login" type="tns:login"/>
+
+<xs:element name="loginResponse" type="tns:loginResponse"/>
+
 <xs:element name="todosalumnos" type="tns:todosalumnos"/>
 
 <xs:element name="todosalumnosResponse" type="tns:todosalumnosResponse"/>
@@ -168,13 +172,14 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="actualizarNota">
+<xs:complexType name="login">
 <xs:sequence>
-<xs:element name="nota" type="tns:modeloNota" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="contraseña" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="actualizarNotaResponse">
+<xs:complexType name="loginResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -187,6 +192,18 @@
 </xs:complexType>
 
 <xs:complexType name="actualizarGradoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarNota">
+<xs:sequence>
+<xs:element name="nota" type="tns:modeloNota" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarNotaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -226,18 +243,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="eliminarAlumno">
-<xs:sequence>
-<xs:element name="id" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="eliminarAlumnoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="actualizarAlumno2">
 <xs:sequence>
 <xs:element name="alumno" type="tns:modeloAlumno" minOccurs="0"/>
@@ -245,6 +250,18 @@
 </xs:complexType>
 
 <xs:complexType name="actualizarAlumno2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarAlumno">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarAlumnoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

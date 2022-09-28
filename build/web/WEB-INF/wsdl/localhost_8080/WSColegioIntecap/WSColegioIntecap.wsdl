@@ -4,11 +4,101 @@
 <xsd:import namespace="http://services.soap.com/" schemaLocation="http://localhost:8080/WSColegioIntecap/WSColegioIntecap?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="login">
+<part name="parameters" element="tns:login"/>
+</message>
+<message name="loginResponse">
+<part name="parameters" element="tns:loginResponse"/>
+</message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
 </message>
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
+</message>
+<message name="actualizarAlumno2">
+<part name="parameters" element="tns:actualizarAlumno2"/>
+</message>
+<message name="actualizarAlumno2Response">
+<part name="parameters" element="tns:actualizarAlumno2Response"/>
+</message>
+<message name="todosalumnos">
+<part name="parameters" element="tns:todosalumnos"/>
+</message>
+<message name="todosalumnosResponse">
+<part name="parameters" element="tns:todosalumnosResponse"/>
+</message>
+<message name="eliminarGrado">
+<part name="parameters" element="tns:eliminarGrado"/>
+</message>
+<message name="eliminarGradoResponse">
+<part name="parameters" element="tns:eliminarGradoResponse"/>
+</message>
+<message name="actualizarGrado">
+<part name="parameters" element="tns:actualizarGrado"/>
+</message>
+<message name="actualizarGradoResponse">
+<part name="parameters" element="tns:actualizarGradoResponse"/>
+</message>
+<message name="todosnotas">
+<part name="parameters" element="tns:todosnotas"/>
+</message>
+<message name="todosnotasResponse">
+<part name="parameters" element="tns:todosnotasResponse"/>
+</message>
+<message name="todosgrados">
+<part name="parameters" element="tns:todosgrados"/>
+</message>
+<message name="todosgradosResponse">
+<part name="parameters" element="tns:todosgradosResponse"/>
+</message>
+<message name="crearAlumno">
+<part name="parameters" element="tns:crearAlumno"/>
+</message>
+<message name="crearAlumnoResponse">
+<part name="parameters" element="tns:crearAlumnoResponse"/>
+</message>
+<message name="buscarAlumno">
+<part name="parameters" element="tns:buscarAlumno"/>
+</message>
+<message name="buscarAlumnoResponse">
+<part name="parameters" element="tns:buscarAlumnoResponse"/>
+</message>
+<message name="eliminarAlumno">
+<part name="parameters" element="tns:eliminarAlumno"/>
+</message>
+<message name="eliminarAlumnoResponse">
+<part name="parameters" element="tns:eliminarAlumnoResponse"/>
+</message>
+<message name="eliminarNota">
+<part name="parameters" element="tns:eliminarNota"/>
+</message>
+<message name="eliminarNotaResponse">
+<part name="parameters" element="tns:eliminarNotaResponse"/>
+</message>
+<message name="actualizarNota">
+<part name="parameters" element="tns:actualizarNota"/>
+</message>
+<message name="actualizarNotaResponse">
+<part name="parameters" element="tns:actualizarNotaResponse"/>
+</message>
+<message name="crearGrado">
+<part name="parameters" element="tns:crearGrado"/>
+</message>
+<message name="crearGradoResponse">
+<part name="parameters" element="tns:crearGradoResponse"/>
+</message>
+<message name="buscarGrado">
+<part name="parameters" element="tns:buscarGrado"/>
+</message>
+<message name="buscarGradoResponse">
+<part name="parameters" element="tns:buscarGradoResponse"/>
+</message>
+<message name="actualizarAlumno">
+<part name="parameters" element="tns:actualizarAlumno"/>
+</message>
+<message name="actualizarAlumnoResponse">
+<part name="parameters" element="tns:actualizarAlumnoResponse"/>
 </message>
 <message name="buscarNota">
 <part name="parameters" element="tns:buscarNota"/>
@@ -22,94 +112,70 @@
 <message name="creaNotaResponse">
 <part name="parameters" element="tns:creaNotaResponse"/>
 </message>
-<message name="buscarAlumno">
-<part name="parameters" element="tns:buscarAlumno"/>
-</message>
-<message name="buscarAlumnoResponse">
-<part name="parameters" element="tns:buscarAlumnoResponse"/>
-</message>
-<message name="buscarGrado">
-<part name="parameters" element="tns:buscarGrado"/>
-</message>
-<message name="buscarGradoResponse">
-<part name="parameters" element="tns:buscarGradoResponse"/>
-</message>
-<message name="actualizarNota">
-<part name="parameters" element="tns:actualizarNota"/>
-</message>
-<message name="actualizarNotaResponse">
-<part name="parameters" element="tns:actualizarNotaResponse"/>
-</message>
-<message name="crearAlumno">
-<part name="parameters" element="tns:crearAlumno"/>
-</message>
-<message name="crearAlumnoResponse">
-<part name="parameters" element="tns:crearAlumnoResponse"/>
-</message>
-<message name="actualizarAlumno">
-<part name="parameters" element="tns:actualizarAlumno"/>
-</message>
-<message name="actualizarAlumnoResponse">
-<part name="parameters" element="tns:actualizarAlumnoResponse"/>
-</message>
-<message name="eliminarGrado">
-<part name="parameters" element="tns:eliminarGrado"/>
-</message>
-<message name="eliminarGradoResponse">
-<part name="parameters" element="tns:eliminarGradoResponse"/>
-</message>
-<message name="eliminarNota">
-<part name="parameters" element="tns:eliminarNota"/>
-</message>
-<message name="eliminarNotaResponse">
-<part name="parameters" element="tns:eliminarNotaResponse"/>
-</message>
-<message name="actualizarGrado">
-<part name="parameters" element="tns:actualizarGrado"/>
-</message>
-<message name="actualizarGradoResponse">
-<part name="parameters" element="tns:actualizarGradoResponse"/>
-</message>
-<message name="eliminarAlumno">
-<part name="parameters" element="tns:eliminarAlumno"/>
-</message>
-<message name="eliminarAlumnoResponse">
-<part name="parameters" element="tns:eliminarAlumnoResponse"/>
-</message>
-<message name="todosnotas">
-<part name="parameters" element="tns:todosnotas"/>
-</message>
-<message name="todosnotasResponse">
-<part name="parameters" element="tns:todosnotasResponse"/>
-</message>
-<message name="crearGrado">
-<part name="parameters" element="tns:crearGrado"/>
-</message>
-<message name="crearGradoResponse">
-<part name="parameters" element="tns:crearGradoResponse"/>
-</message>
-<message name="todosalumnos">
-<part name="parameters" element="tns:todosalumnos"/>
-</message>
-<message name="todosalumnosResponse">
-<part name="parameters" element="tns:todosalumnosResponse"/>
-</message>
-<message name="todosgrados">
-<part name="parameters" element="tns:todosgrados"/>
-</message>
-<message name="todosgradosResponse">
-<part name="parameters" element="tns:todosgradosResponse"/>
-</message>
-<message name="actualizarAlumno2">
-<part name="parameters" element="tns:actualizarAlumno2"/>
-</message>
-<message name="actualizarAlumno2Response">
-<part name="parameters" element="tns:actualizarAlumno2Response"/>
-</message>
 <portType name="WSColegioIntecap">
+<operation name="login">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/loginRequest" message="tns:login"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/loginResponse" message="tns:loginResponse"/>
+</operation>
 <operation name="hello">
 <input wsam:Action="http://services.soap.com/WSColegioIntecap/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://services.soap.com/WSColegioIntecap/helloResponse" message="tns:helloResponse"/>
+</operation>
+<operation name="actualizarAlumno2">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarAlumno2Request" message="tns:actualizarAlumno2"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarAlumno2Response" message="tns:actualizarAlumno2Response"/>
+</operation>
+<operation name="todosalumnos">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/todosalumnosRequest" message="tns:todosalumnos"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/todosalumnosResponse" message="tns:todosalumnosResponse"/>
+</operation>
+<operation name="eliminarGrado">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarGradoRequest" message="tns:eliminarGrado"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarGradoResponse" message="tns:eliminarGradoResponse"/>
+</operation>
+<operation name="actualizarGrado">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarGradoRequest" message="tns:actualizarGrado"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarGradoResponse" message="tns:actualizarGradoResponse"/>
+</operation>
+<operation name="todosnotas">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/todosnotasRequest" message="tns:todosnotas"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/todosnotasResponse" message="tns:todosnotasResponse"/>
+</operation>
+<operation name="todosgrados">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/todosgradosRequest" message="tns:todosgrados"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/todosgradosResponse" message="tns:todosgradosResponse"/>
+</operation>
+<operation name="crearAlumno">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/crearAlumnoRequest" message="tns:crearAlumno"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/crearAlumnoResponse" message="tns:crearAlumnoResponse"/>
+</operation>
+<operation name="buscarAlumno">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/buscarAlumnoRequest" message="tns:buscarAlumno"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/buscarAlumnoResponse" message="tns:buscarAlumnoResponse"/>
+</operation>
+<operation name="eliminarAlumno">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarAlumnoRequest" message="tns:eliminarAlumno"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarAlumnoResponse" message="tns:eliminarAlumnoResponse"/>
+</operation>
+<operation name="eliminarNota">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarNotaRequest" message="tns:eliminarNota"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarNotaResponse" message="tns:eliminarNotaResponse"/>
+</operation>
+<operation name="actualizarNota">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarNotaRequest" message="tns:actualizarNota"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarNotaResponse" message="tns:actualizarNotaResponse"/>
+</operation>
+<operation name="crearGrado">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/crearGradoRequest" message="tns:crearGrado"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/crearGradoResponse" message="tns:crearGradoResponse"/>
+</operation>
+<operation name="buscarGrado">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/buscarGradoRequest" message="tns:buscarGrado"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/buscarGradoResponse" message="tns:buscarGradoResponse"/>
+</operation>
+<operation name="actualizarAlumno">
+<input wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarAlumnoRequest" message="tns:actualizarAlumno"/>
+<output wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarAlumnoResponse" message="tns:actualizarAlumnoResponse"/>
 </operation>
 <operation name="buscarNota">
 <input wsam:Action="http://services.soap.com/WSColegioIntecap/buscarNotaRequest" message="tns:buscarNota"/>
@@ -119,66 +185,145 @@
 <input wsam:Action="http://services.soap.com/WSColegioIntecap/creaNotaRequest" message="tns:creaNota"/>
 <output wsam:Action="http://services.soap.com/WSColegioIntecap/creaNotaResponse" message="tns:creaNotaResponse"/>
 </operation>
-<operation name="buscarAlumno">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/buscarAlumnoRequest" message="tns:buscarAlumno"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/buscarAlumnoResponse" message="tns:buscarAlumnoResponse"/>
-</operation>
-<operation name="buscarGrado">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/buscarGradoRequest" message="tns:buscarGrado"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/buscarGradoResponse" message="tns:buscarGradoResponse"/>
-</operation>
-<operation name="actualizarNota">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarNotaRequest" message="tns:actualizarNota"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarNotaResponse" message="tns:actualizarNotaResponse"/>
-</operation>
-<operation name="crearAlumno">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/crearAlumnoRequest" message="tns:crearAlumno"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/crearAlumnoResponse" message="tns:crearAlumnoResponse"/>
-</operation>
-<operation name="actualizarAlumno">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarAlumnoRequest" message="tns:actualizarAlumno"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarAlumnoResponse" message="tns:actualizarAlumnoResponse"/>
-</operation>
-<operation name="eliminarGrado">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarGradoRequest" message="tns:eliminarGrado"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarGradoResponse" message="tns:eliminarGradoResponse"/>
-</operation>
-<operation name="eliminarNota">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarNotaRequest" message="tns:eliminarNota"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarNotaResponse" message="tns:eliminarNotaResponse"/>
-</operation>
-<operation name="actualizarGrado">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarGradoRequest" message="tns:actualizarGrado"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarGradoResponse" message="tns:actualizarGradoResponse"/>
-</operation>
-<operation name="eliminarAlumno">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarAlumnoRequest" message="tns:eliminarAlumno"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/eliminarAlumnoResponse" message="tns:eliminarAlumnoResponse"/>
-</operation>
-<operation name="todosnotas">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/todosnotasRequest" message="tns:todosnotas"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/todosnotasResponse" message="tns:todosnotasResponse"/>
-</operation>
-<operation name="crearGrado">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/crearGradoRequest" message="tns:crearGrado"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/crearGradoResponse" message="tns:crearGradoResponse"/>
-</operation>
-<operation name="todosalumnos">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/todosalumnosRequest" message="tns:todosalumnos"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/todosalumnosResponse" message="tns:todosalumnosResponse"/>
-</operation>
-<operation name="todosgrados">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/todosgradosRequest" message="tns:todosgrados"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/todosgradosResponse" message="tns:todosgradosResponse"/>
-</operation>
-<operation name="actualizarAlumno2">
-<input wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarAlumno2Request" message="tns:actualizarAlumno2"/>
-<output wsam:Action="http://services.soap.com/WSColegioIntecap/actualizarAlumno2Response" message="tns:actualizarAlumno2Response"/>
-</operation>
 </portType>
 <binding name="WSColegioIntecapPortBinding" type="tns:WSColegioIntecap">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="login">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizarAlumno2">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="todosalumnos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarGrado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizarGrado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="todosnotas">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="todosgrados">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="crearAlumno">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarAlumno">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarAlumno">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarNota">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizarNota">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="crearGrado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarGrado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizarAlumno">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -197,132 +342,6 @@
 </output>
 </operation>
 <operation name="creaNota">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="buscarAlumno">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="buscarGrado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="actualizarNota">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="crearAlumno">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="actualizarAlumno">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="eliminarGrado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="eliminarNota">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="actualizarGrado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="eliminarAlumno">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="todosnotas">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="crearGrado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="todosalumnos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="todosgrados">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="actualizarAlumno2">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

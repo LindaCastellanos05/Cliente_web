@@ -26,19 +26,28 @@
          <div class="container mt-4"></div>
         <h1 class="text-center bg-info mb-4">Sistema de alumnos intecap</h1>
         
-        <div class="card-header">
+        <div class="bg-warning card-header">
                <a href="controlador?Accion=agregarn"class="btn btn-primary">Agregar Nota</a>
+               <a href="controlador?Accion=index" class="btn btn-info">Inicio Alumnos</a>
             
-               <div class="card-body">
-                    <table id="mitablaintecap3" class="table table-primary" style="width:100%">
-                   
-                         <div class="mt-2 mb-2">
-                           <input type="text" name="txtnombre" class="form-control" id="txtid" placeholder="ID alumno">
-                        <input type="text" name="txtnombre" class="form-control" id="txtnombre" placeholder="ID grado">
+               
+               <center><div class="container mt-2 mb-2">
+                           <input type="text" name="txtnombre" class="form-control" id="txtal" placeholder="alumno"readonly="true">
+                        <input type="text" name="txtnombre" class="form-control" id="txtgr" placeholder="grado"readonly="true">
+                        <input type="text" name="txtnombre" class="form-control" id="txtno1" placeholder="nota 1"readonly="true">
+                        <input type="text" name="txtnombre" class="form-control" id="txtno2" placeholder="nota 2"readonly="true">
+                        <input type="text" name="txtnombre" class="form-control" id="txtno3" placeholder="nota 3"readonly="true">
+                        <input type="text" name="txtnombre" class="form-control" id="txtno4" placeholder="nota 4"readonly="true">
                          
-                    </div>
+                    </div></center>
+                         </div>
                         
-                        
+           
+                        <div class="card-body">
+                   
+                  
+                    <table id="mitablaintecap3" class="table table-primary" style="width:100%">
+                  
                         
                        <thead>
                     <th>ID ALUMNO</th>
@@ -61,7 +70,7 @@ for(ModeloNota nt:datos){
     
 
                             %>
-                        <tr>
+                        <tr id="notasdatos">
                     <td><%=nt.getIdAlumno() %> </td>
                     <td><%=nt.getNombreAlumno() %> </td><!-- comment -->
                     <td><%=nt.getIdGrado() %> </td>
@@ -80,10 +89,9 @@ for(ModeloNota nt:datos){
                     
                 </table>    
                        
-            
-            
-        </div>
-        </div> 
+              </div>
+       
+         
     </body>
      <script type="text/javascript" charset="utf8" src=" https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -132,7 +140,7 @@ for(ModeloNota nt:datos){
                // alert("se elimino");
                
               Swal.fire({
-  icon: 'success',
+  icon: 'info',
   title: 'Se actualizo nota',
   text: 'SE PROCEDIO A ACTUALIZAR DATOS !',
   
@@ -158,13 +166,11 @@ for(ModeloNota nt:datos){
     var table =document.getElementById("mitablaintecap3");
         //por etiqueta getElementsByTagName
         var tbody=document.getElementsByTagName("tbody");
-      $("body").on("click","#alumnosdatos",function(event){
+      $("body").on("click","#notasdatos",function(event){
            
           e=event||windows.event;
           var data=[];
-           var data2=[];
           var target=e.srcElement || e.target;
-           var target2=e.srcElement || e.target;
            
           while(target&&target.nodeName !=="TR"){
               target=target.parentNode;
@@ -175,23 +181,17 @@ for(ModeloNota nt:datos){
                
               for(var i=0;i<cells.length;i++){
                   data.push(cells[i].innerHTML);
-                 
-              
                                     
               }
-              
-              
-              
           }
              
-          while(target2&&target2.nodeName !=="TD"){
-              target2=target2.firstChild;
-              
-          }
          
-          
-               document.getElementById('txtidal').value=data[0];
-               document.getElementById('txtidgrado').value=data[2];
+               document.getElementById('txtal').value=data[1];
+               document.getElementById('txtgr').value=data[3];
+               document.getElementById('txtno1').value=data[4];
+               document.getElementById('txtno2').value=data[5];
+               document.getElementById('txtno3').value=data[6];
+               document.getElementById('txtno4').value=data[7];
       });  
         
     </script>

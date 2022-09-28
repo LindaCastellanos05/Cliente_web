@@ -22,30 +22,34 @@
   
     
     </head>
+    
     <body>
         <div class="container mt-4"></div>
         <h1 class="text-center bg-info mb-4">Sistema de alumnos intecap</h1>
         
         <div class="card">
            
-            <div class="card-header">
+            <div class="bg-warning card-header">
                <a href="controlador?Accion=agregar"class="btn btn-primary">Agregar Usuario</a>
                <a href="controlador?Accion=grado"class="btn btn-info">Grados</a>
                <a href="controlador?Accion=notas"class="btn btn-success">Notas</a>
-             
-               <div class="container mt-2"></div>
-               
-               <div class="mt-2 mb-2">
-                           <input type="text" name="txtnombre" class="form-control" id="txtid" placeholder="ID">
-                        <input type="text" name="txtnombre" class="form-control" id="txtnombre" placeholder="nombre">
-                         <input type="text" name="txtnombre" class="form-control" id="txtapellido" placeholder="apellido">
-                          <input type="text" name="txtnombre" class="form-control" id="txtimagen" placeholder="foto url">
-                        
-                          <div id="imagen"></div>
+                
+            
+               <center><div class="container mt-2">
+                
+               <div class="bg-info mt-2 mb-2">
+                   
+                   <input type="text" name="txtidalumnobuscar" class="form-control" id="txtid" placeholder="ID" readonly="true">
+                        <input type="text" name="txtnombre" class="form-control" id="txtnombre" placeholder="nombre" readonly="true">
+                         <input type="text" name="txtnombre" class="form-control" id="txtapellido" placeholder="apellido" readonly="true">
+                         <div id="imagen" name="imagenal"></div>
+                         
+                 </div>          
                          
                          
-                    </div>
-               
+                   </div>
+                       </center> 
+            </div>
                <div class="card-body">
                 <table id="mitablaintecap" class="table table-success table-striped" style="width:100%">
                    
@@ -94,7 +98,7 @@ for(ModeloAlumno al:datos){
                        
             
             </div>
-       </div> 
+      
         </div> 
          
                     
@@ -139,7 +143,7 @@ for(ModeloAlumno al:datos){
               Swal.fire({
   icon: 'success',
   title: 'Se Guardo Alumno',
-  text: 'SE PROCEDIO A Guardar DAtos !',
+  text: 'SE PROCEDIO A Guardar DATOS!',
   
 });
                   setTimeout("redireccion()",2000);
@@ -149,7 +153,7 @@ for(ModeloAlumno al:datos){
                // alert("se elimino");
                
               Swal.fire({
-  icon: 'success',
+  icon: 'info',
   title: 'Se actualizo Alumno',
   text: 'SE PROCEDIO A ACTUALIZAR DATOS !',
   
@@ -176,12 +180,12 @@ for(ModeloAlumno al:datos){
         //por etiqueta getElementsByTagName
         var tbody=document.getElementsByTagName("tbody");
       $("body").on("click","#alumnosdatos",function(event){
-           
+           //alert("le dio un click a la tabla");
           e=event||windows.event;
           var data=[];
            var data2=[];
           var target=e.srcElement || e.target;
-           var target2=e.srcElement || e.target;
+         var target2=e.srcElement || e.target;
            
           while(target&&target.nodeName !=="TR"){
               target=target.parentNode;
@@ -197,38 +201,13 @@ for(ModeloAlumno al:datos){
                                     
               }
               
-              
-              
           }
              
-          while(target2&&target2.nodeName !=="TD"){
-              target2=target2.firstChild;
-              
-          }
-          if(target2){
-               var cells2=target.getElementsByTagName("img");
-             for(var i=0;i<cells2.length;i++){
-                  data2.push(cells2[i].currentSrc);
-                
-              
-                                    
-              }
-             
-               var image2=document.createElement("img");
-               var dondevoycolocar=document.getElementById("espacioimagen");
-               image2.id="imagenallen";
-               image2.class="img-fluid";
-               image2.src=data2[0];
-               image2.height="250";
-               image2.width="250";
-               dondevoycolocar.appendChild(image2);
-             
-          }
+       
           
                document.getElementById('txtid').value=data[0];
           document.getElementById('txtnombre').value=data[1];
                document.getElementById('txtapellido').value=data[2];
-           document.getElementById('txtimagen').value=data[3];
             document.getElementById('imagen').innerHTML=data[3];
       });  
         

@@ -47,4 +47,9 @@ public class AlumnoModelo {
         ws.WSColegioIntecap webservicio = service.getWSColegioIntecapPort();
         return webservicio.actualizarAlumno2(alumno);
      }
+      public static String login(String nombre, String contra){
+         ws.WSColegioIntecap_Service service = new ws.WSColegioIntecap_Service();
+        ws.WSColegioIntecap webservicio = service.getWSColegioIntecapPort();
+        return webservicio.login(nombre, contra);
+      }
 }
